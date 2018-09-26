@@ -8,6 +8,11 @@ try {
 function speak(text, args) {
   var PROFILE = 1;
 
+  // Safari hack to enable audio on onclick
+  var ael = document.createElement( 'audio' );
+  ael.play();
+  delete ael;
+
   function parseWav(wav) {
     function readInt(i, bytes) {
       var ret = 0;
